@@ -1,0 +1,1 @@
+# file_image_processing_azure_function
