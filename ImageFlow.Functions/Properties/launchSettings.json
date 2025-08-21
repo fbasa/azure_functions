@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "ImageFlow.Functions": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7229",
+      "launchBrowser": false
+    }
+  }
+}
