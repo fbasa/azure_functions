@@ -7,8 +7,6 @@ using Azure.Storage.Blobs;
 using ImageFlow.Functions.Abstractions;
 using ImageFlow.Functions.Options;
 using ImageFlow.Functions.Services;
-using Microsoft.Azure.Functions.Worker;
-using Microsoft.Azure.Functions.Worker.Configuration;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -53,7 +51,7 @@ var host = new HostBuilder()
         // SRP services
         services.AddSingleton<IBlobLock, BlobLeaseLock>();
         services.AddSingleton<IIdempotencyStore>(sp =>
-            new BlobTagIdempotencyStore(sp.GetRequiredService<BlobServiceClient>(), storage.InputContainer));
+            new BlobTagIdempotencyStore(sp.GetRequiredService<BlobServiceClient>()));
         services.AddSingleton<IImageAnalyzer, VisionImageAnalyzer>();
         services.AddSingleton<IThumbnailGenerator, ImageSharpThumbnailGenerator>();
         services.AddSingleton<IResultWriter>(sp =>

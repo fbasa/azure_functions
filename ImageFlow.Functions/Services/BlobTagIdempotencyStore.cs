@@ -4,20 +4,12 @@ using ImageFlow.Functions.Abstractions;
 
 namespace ImageFlow.Functions.Services;
 
-public sealed class BlobTagIdempotencyStore : IIdempotencyStore
+public sealed class BlobTagIdempotencyStore(BlobServiceClient svc) : IIdempotencyStore
 {
-    private readonly BlobServiceClient _svc;
-    private readonly string _container;
-    public BlobTagIdempotencyStore(BlobServiceClient svc, string inputContainer)
-    {
-        _svc = svc;
-        _container = inputContainer;
-    }
-
     public async Task<(bool AlreadyProcessed, string? ExistingHash)>
         CheckAsync(string container, string blobName, CancellationToken ct)
     {
-        var client = _svc.GetBlobContainerClient(container).GetBlobClient(blobName);
+        var client = svc.GetBlobContainerClient(container).GetBlobClient(blobName);
         try
         {
             var tags = await client.GetTagsAsync(cancellationToken: ct);
@@ -34,7 +26,7 @@ public sealed class BlobTagIdempotencyStore : IIdempotencyStore
 
     public async Task MarkProcessedAsync(string container, string blobName, string sha256, CancellationToken ct)
     {
-        var client = _svc.GetBlobContainerClient(container).GetBlobClient(blobName);
+        var client = svc.GetBlobContainerClient(container).GetBlobClient(blobName);
         var tags = new Dictionary<string, string>
         {
             ["processed"] = "true",
