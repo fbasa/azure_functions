@@ -1,1 +1,29 @@
-# file_image_processing_azure_function
+Azure Functions (C# — .NET 8, isolated worker) solution for real-time file & image processing on Blob Storage create/update. It uses Blob Storage (trigger + I/O), Azure AI Vision (Computer Vision) for analysis, and Key Vault for secrets. It’s event-driven, parallelizable, and idempotent, with durable retries and safe concurrency.
+```
+src/
+  ImageFlow.Functions/
+    Program.cs
+    host.json
+    local.settings.json              
+    ImageFlow.Functions.csproj
+    Options/
+      StorageOptions.cs
+      VisionOptions.cs
+      KeyVaultOptions.cs
+    Abstractions/
+      IBlobLock.cs
+      IIdempotencyStore.cs
+      IImageAnalyzer.cs
+      IThumbnailGenerator.cs
+      IResultWriter.cs
+    Services/
+      BlobLeaseLock.cs
+      BlobTagIdempotencyStore.cs
+      VisionImageAnalyzer.cs
+      ImageSharpThumbnailGenerator.cs
+      BlobResultWriter.cs
+    Functions/
+      ProcessImageFunction.cs
+    Models/
+      ImageAnalysisDto.cs
+```
