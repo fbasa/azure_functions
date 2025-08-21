@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36327.8 d17.14
+VisualStudioVersion = 17.14.36327.8
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageFlow.Functions", "ImageFlow.Functions.csproj", "{1AB995A4-6F4B-49E4-BC7F-454F111CAA27}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageFlow.Functions", "ImageFlow.Functions\ImageFlow.Functions.csproj", "{EF97D3D7-A297-F040-37B7-0009BA3D118C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{1AB995A4-6F4B-49E4-BC7F-454F111CAA27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1AB995A4-6F4B-49E4-BC7F-454F111CAA27}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1AB995A4-6F4B-49E4-BC7F-454F111CAA27}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1AB995A4-6F4B-49E4-BC7F-454F111CAA27}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF97D3D7-A297-F040-37B7-0009BA3D118C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF97D3D7-A297-F040-37B7-0009BA3D118C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF97D3D7-A297-F040-37B7-0009BA3D118C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF97D3D7-A297-F040-37B7-0009BA3D118C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
